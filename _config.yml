@@ -15,7 +15,7 @@ footer_text: >
   • Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a> theme
 keywords: Computational Fluid Dynamics (CFD), OpenFOAM, High-Performance Computing (HPC), Solver Development, Graph Neural Networks (GNN)
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon:  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: 🌀  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://faiqshahbaz.github.io # the base hostname & protocol for your site
 baseurl:  # the subpath of your site, e.g. /blog/. Leave blank for root

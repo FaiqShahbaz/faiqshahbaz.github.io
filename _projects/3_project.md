@@ -2,7 +2,7 @@
 layout: page
 title: Basic CFD Flows in Python
 description: Two classic CFD problems implemented with finite differences for learning flow physics and numerical methods.
-img: assets/img/projects/p3/c2.png
+img: assets/img/projects/p3/channel1.png
 importance: 3
 category: research
 related_publications: false
