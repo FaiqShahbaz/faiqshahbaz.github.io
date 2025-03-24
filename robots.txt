@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://faiqshahbaz.github.io/sitemap.xml
