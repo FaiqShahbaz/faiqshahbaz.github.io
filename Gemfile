@@ -36,3 +36,7 @@ group :other_plugins do
     # gem 'unicode_utils' -- should be already installed by jekyll
     # gem 'webrick' -- should be already installed by jekyll
 end
+
+# ✅ Modern SCSS support
+gem 'sass-embedded'
+gem 'jekyll-sass-converter', '~> 3.0'

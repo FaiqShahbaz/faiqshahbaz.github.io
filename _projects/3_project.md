@@ -1,81 +1,123 @@
 ---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: Basic CFD Flows in Python
+description: Two classic CFD problems implemented with finite differences for learning flow physics and numerical methods.
+img: assets/img/projects/p3/c2.png
 importance: 3
-category: work
+category: research
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+This project features two classic **incompressible CFD flow problems** implemented from scratch in Python using finite difference methods. These examples serve as a foundation for learning numerical methods, simulation workflow, and understanding basic flow physics.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+---
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+## Included Problems
+
+### 1. Lid-Driven Cavity Flow
+
+- Solves the **incompressible Navier–Stokes equations** in a 2D square domain.
+- The top wall (lid) moves with constant velocity, generating vortices in the cavity.
+- Implements a **pressure Poisson equation** using:
+  - **Dirichlet** conditions on pressure
+  - **Neumann** conditions for velocity walls
+- Uses:
+  - Fixed uniform grid (default: 100×100)
+  - Explicit time-stepping scheme
+---
+
+### 2. Channel Flow 
+
+- Simulates **pressure-driven flow** between two parallel horizontal plates
+- Periodic boundary conditions in the **streamwise direction**
+- Solves the incompressible Navier–Stokes equations using finite differences
+- Includes:
+  - Iterative pressure-velocity solver
+
+---
+
+---
+
+## Results and Discussion
+
+### Lid-Driven Cavity Flow
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+  <div class="col-sm-6 mt-3">
+    {% include figure.liquid 
+      path="assets/img/projects/p3/c2.png" 
+      title="Velocity Field (Quiver)" 
+      caption="Velocity vectors showing the main vortex structure" 
+      class="img-fluid rounded z-depth-1" 
+    %}
+  </div>
+  <div class="col-sm-6 mt-3">
+    {% include figure.liquid 
+      path="assets/img/projects/p3/c1.png" 
+      title="Streamlines" 
+      caption="Streamline plot visualizing circulation inside the cavity" 
+      class="img-fluid rounded z-depth-1" 
+    %}
+  </div>
 </div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
+
+**Observations:**
+- A strong primary vortex forms in the center, driven by the top lid.
+- Secondary eddies begin to form near the corners as time advances.
+- The flow stabilizes after sufficient time steps, showing smooth velocity distribution.
+
+---
+
+### Channel Flow
+
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm-6 mt-3">
+    {% include figure.liquid 
+      path="assets/img/projects/p3/channel1.png" 
+      title="Velocity Field (Quiver)" 
+      caption="Streamwise velocity vectors inside the channel" 
+      class="img-fluid rounded z-depth-1" 
+    %}
   </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm-6 mt-3">
+    {% include figure.liquid 
+      path="assets/img/projects/p3/channel2.png" 
+      title="Smoothed Velocity Magnitude" 
+      caption="velocity distribution" 
+      class="img-fluid rounded z-depth-1" 
+    %}
   </div>
 </div>
-```
 
-{% endraw %}
+<div class="row">
+  <div class="col-sm-6 mt-3">
+    {% include figure.liquid 
+      path="assets/img/projects/p3/channel3.png" 
+      title="Smoothed Vorticity Field" 
+      caption="Boundary layers and shear zones visualized via vorticity" 
+      class="img-fluid rounded z-depth-1" 
+    %}
+  </div>
+  <div class="col-sm-6 mt-3">
+    {% include figure.liquid 
+      path="assets/img/projects/p3/channel4.png" 
+      title="Centerline Velocity Profile" 
+      caption="u vs y profile confirming parabolic trend" 
+      class="img-fluid rounded z-depth-1" 
+    %}
+  </div>
+</div>
+
+**Observations:**
+- Smoothed velocity field shows clean profile across the channel.
+- Vorticity plot highlights boundary-layer effects near walls.
+- Centerline velocity matches parabolic-like behavior, confirming solver accuracy.
+
+---
+
+### Conclusion
+
+These simulations demonstrate fundamental fluid dynamics behaviors using classical numerical methods. Both cases validate the accuracy of solving the **incompressible Navier–Stokes equations** using finite difference schemes, with meaningful **post-processing** for analysis and interpretation.
+
+
+🔗 [View Project on GitHub](https://github.com/FaiqShahbaz/CFD-Code-Development/tree/main/Python_BasicFlows)
