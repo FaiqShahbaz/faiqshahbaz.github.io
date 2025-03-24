@@ -1,9 +1,0 @@
-github_users:
-  - FaiqShahbaz  # your GitHub username
-
-repo_description_lines_max: 3
-
-github_repos:
-  - FaiqShahbaz/CFD-GNN
-  - FaiqShahbaz/CFD-Code-Development
-
