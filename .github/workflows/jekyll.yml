@@ -2,32 +2,51 @@ name: Build and Deploy Jekyll Site
 
 on:
   push:
-    branches:
-      - main  # Or 'master' — change this if your default branch is different
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: 🧰 Set up Ruby
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
+          ruby-version: "3.3"
           bundler-cache: true
 
-      - name: 📦 Install dependencies
-        run: bundle install
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
-      - name: 🛠️ Build the site
-        run: bundle exec jekyll build
+      - name: Build site
+        run: bundle exec jekyll build --destination _site
+        env:
+          JEKYLL_ENV: production
 
-      - name: 🚀 Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          publish_branch: gh-pages
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
