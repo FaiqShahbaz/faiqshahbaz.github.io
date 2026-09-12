@@ -3,6 +3,9 @@
 {% assign ext = parts.last %}
 
 <figure
+  {% if include.figure_class %}
+    class="{{ include.figure_class }}"
+  {% endif %}
   {% if include.slot %}
     slot="{{ include.slot }}"
   {% endif %}
@@ -38,13 +41,9 @@
       {% endif %}
       {% if include.width %}
         width="{{ include.width }}"
-      {% else %}
-        width="100%"
       {% endif %}
       {% if include.height %}
         height="{{ include.height }}"
-      {% else %}
-        height="auto"
       {% endif %}
       {% if include['min-width'] or include['min-height'] or include['max-width'] or include['max-height'] %}
         style="

@@ -3,6 +3,8 @@ layout: page
 title: Basic CFD Flows in Python
 description: Two classic CFD problems implemented with finite differences for learning flow physics and numerical methods.
 img: assets/img/projects/p3/channel1.png
+img_alt: Velocity vectors for a pressure-driven channel flow simulation
+github: https://github.com/FaiqShahbaz/CFD-Code-Development/tree/main/Python_BasicFlows
 importance: 3
 category: research
 related_publications: false
@@ -24,9 +26,10 @@ This project features two classic **incompressible CFD flow problems** implement
 - Uses:
   - Fixed uniform grid (default: 100×100)
   - Explicit time-stepping scheme
+
 ---
 
-### 2. Channel Flow 
+### 2. Channel Flow
 
 - Simulates **pressure-driven flow** between two parallel horizontal plates
 - Periodic boundary conditions in the **streamwise direction**
@@ -44,24 +47,27 @@ This project features two classic **incompressible CFD flow problems** implement
 
 <div class="row">
   <div class="col-sm-6 mt-3">
-    {% include figure.liquid 
-      path="assets/img/projects/p3/c2.png" 
-      title="Velocity Field (Quiver)" 
-      caption="Velocity vectors showing the main vortex structure" 
-      class="img-fluid rounded z-depth-1" 
+    {% include figure.liquid
+      path="assets/img/projects/p3/c2.png"
+      title="Velocity Field (Quiver)"
+      caption="Velocity vectors showing the main vortex structure"
+      alt="Velocity vectors showing the primary recirculating vortex in a lid-driven cavity"
+      class="img-fluid rounded z-depth-1"
     %}
   </div>
   <div class="col-sm-6 mt-3">
-    {% include figure.liquid 
-      path="assets/img/projects/p3/c1.png" 
-      title="Streamlines" 
-      caption="Streamline plot visualizing circulation inside the cavity" 
-      class="img-fluid rounded z-depth-1" 
+    {% include figure.liquid
+      path="assets/img/projects/p3/c1.png"
+      title="Streamlines"
+      caption="Streamline plot visualizing circulation inside the cavity"
+      alt="Streamlines showing the main cavity vortex and smaller corner recirculation regions"
+      class="img-fluid rounded z-depth-1"
     %}
   </div>
 </div>
 
 **Observations:**
+
 - A strong primary vortex forms in the center, driven by the top lid.
 - Secondary eddies begin to form near the corners as time advances.
 - The flow stabilizes after sufficient time steps, showing smooth velocity distribution.
@@ -72,43 +78,48 @@ This project features two classic **incompressible CFD flow problems** implement
 
 <div class="row">
   <div class="col-sm-6 mt-3">
-    {% include figure.liquid 
-      path="assets/img/projects/p3/channel1.png" 
-      title="Velocity Field (Quiver)" 
-      caption="Streamwise velocity vectors inside the channel" 
-      class="img-fluid rounded z-depth-1" 
+    {% include figure.liquid
+      path="assets/img/projects/p3/channel1.png"
+      title="Velocity Field (Quiver)"
+      caption="Streamwise velocity vectors inside the channel"
+      alt="Velocity vectors showing pressure-driven flow through a horizontal channel"
+      class="img-fluid rounded z-depth-1"
     %}
   </div>
   <div class="col-sm-6 mt-3">
-    {% include figure.liquid 
-      path="assets/img/projects/p3/channel2.png" 
-      title="Smoothed Velocity Magnitude" 
-      caption="velocity distribution" 
-      class="img-fluid rounded z-depth-1" 
+    {% include figure.liquid
+      path="assets/img/projects/p3/channel2.png"
+      title="Smoothed Velocity Magnitude"
+      caption="velocity distribution"
+      alt="Contour plot of velocity magnitude across the channel"
+      class="img-fluid rounded z-depth-1"
     %}
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-6 mt-3">
-    {% include figure.liquid 
-      path="assets/img/projects/p3/channel3.png" 
-      title="Smoothed Vorticity Field" 
-      caption="Boundary layers and shear zones visualized via vorticity" 
-      class="img-fluid rounded z-depth-1" 
+    {% include figure.liquid
+      path="assets/img/projects/p3/channel3.png"
+      title="Smoothed Vorticity Field"
+      caption="Boundary layers and shear zones visualized via vorticity"
+      alt="Vorticity field highlighting shear near the channel walls"
+      class="img-fluid rounded z-depth-1"
     %}
   </div>
   <div class="col-sm-6 mt-3">
-    {% include figure.liquid 
-      path="assets/img/projects/p3/channel4.png" 
-      title="Centerline Velocity Profile" 
-      caption="u vs y profile confirming parabolic trend" 
-      class="img-fluid rounded z-depth-1" 
+    {% include figure.liquid
+      path="assets/img/projects/p3/channel4.png"
+      title="Centerline Velocity Profile"
+      caption="u vs y profile confirming parabolic trend"
+      alt="Streamwise velocity plotted against channel height with a parabolic profile"
+      class="img-fluid rounded z-depth-1"
     %}
   </div>
 </div>
 
 **Observations:**
+
 - Smoothed velocity field shows clean profile across the channel.
 - Vorticity plot highlights boundary-layer effects near walls.
 - Centerline velocity matches parabolic-like behavior, confirming solver accuracy.
@@ -118,6 +129,5 @@ This project features two classic **incompressible CFD flow problems** implement
 ### Conclusion
 
 These simulations demonstrate fundamental fluid dynamics behaviors using classical numerical methods. Both cases validate the accuracy of solving the **incompressible Navier–Stokes equations** using finite difference schemes, with meaningful **post-processing** for analysis and interpretation.
-
 
 🔗 [View Project on GitHub](https://github.com/FaiqShahbaz/CFD-Code-Development/tree/main/Python_BasicFlows)

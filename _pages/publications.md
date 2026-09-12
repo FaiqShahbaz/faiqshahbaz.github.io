@@ -2,20 +2,16 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Publications by categories in reversed chronological order. 
+description: Research manuscripts and conference submissions in reverse chronological order.
 nav: true
 nav_order: 2
 ---
-
-<!-- _pages/publications.md -->
-
-<!-- Bibsearch Feature -->
 
 {% include bib_search.liquid %}
 
 <div class="publications">
 
-I’m currently involved in a few research projects, and plan to share the resulting publications here as they become available.
+<p>The entries below comprise a manuscript in preparation and two submitted conference abstracts. The status of each item is stated explicitly.</p>
 
 {% bibliography %}
 

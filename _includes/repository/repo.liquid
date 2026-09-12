@@ -1,5 +1,5 @@
 {% assign repo_full = include.repository %}
-{% assign parts = repo_full | split: "/" %}
+{% assign parts = repo_full | split: '/' %}
 {% assign username = parts[0] %}
 {% assign reponame = parts[1] %}
 
@@ -14,9 +14,9 @@
   and locally if JEKYLL_GITHUB_TOKEN is set and metadata can be fetched.
 {%- endcomment -%}
 
-{% assign r = nil %}
+{% assign r = null %}
 {% if site.github and site.github.public_repositories %}
-  {% assign matches = site.github.public_repositories | where: "name", reponame %}
+  {% assign matches = site.github.public_repositories | where: 'name', reponame %}
   {% assign r = matches | first %}
 {% endif %}
 
@@ -40,9 +40,7 @@
     {% if r and r.description %}
       <div class="text-muted mt-2">{{ r.description }}</div>
     {% else %}
-      <div class="text-muted mt-2">
-        Repo description will appear when GitHub metadata is available.
-      </div>
+      <div class="text-muted mt-2">Repo description will appear when GitHub metadata is available.</div>
     {% endif %}
 
     {% if r %}

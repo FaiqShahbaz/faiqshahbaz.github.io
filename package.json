@@ -1,6 +1,13 @@
 {
+  "name": "faiqshahbaz.github.io",
+  "private": true,
+  "scripts": {
+    "format:check": "prettier . --check",
+    "purge": "purgecss -c purgecss.config.js"
+  },
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "1.4.0",
-    "prettier": "3.1.1"
+    "prettier": "3.1.1",
+    "purgecss": "8.0.0"
   }
 }

@@ -3,9 +3,12 @@ layout: page
 title: 2D Advection-Diffusion Solver
 description: Serial and parallel solvers for the 2D advection-diffusion equation using Python
 img: assets/img/projects/p2/p2.png
+img_alt: Contour plot from the two-dimensional diffusion solver
+github: https://github.com/FaiqShahbaz/CFD-Code-Development/tree/main/python_MPI/Advection_Diffusion
 importance: 2
 category: research
 related_publications: false
+math: true
 ---
 
 This project implements serial and parallel solvers for the **2D Advection-Diffusion Equation**, a fundamental PDE describing how a scalar quantity (e.g., temperature, concentration) evolves under the combined influence of advection (transport) and diffusion (spreading).
@@ -22,7 +25,7 @@ $$
 
 Where:
 
-- \( phi(x, y, t) \): scalar field (e.g., temperature)
+- \( \phi(x, y, t) \): scalar field (e.g., temperature)
 - \( u, v \): advection velocities
 - \( D \): diffusion coefficient
 - \( x, y \): spatial coordinates
@@ -41,7 +44,6 @@ $$
 \frac{\partial \phi}{\partial t} = D \left( \frac{\partial^2 \phi}{\partial x^2} + \frac{\partial^2 \phi}{\partial y^2} \right)
 $$
 
-
 - **Boundary conditions**: Dirichlet (fixed values) on all sides
 - **Initial condition**: Typically a Gaussian pulse or localized concentration in the center
 - **Time integration**: Explicit Euler scheme
@@ -52,32 +54,36 @@ $$
 
 The following table summarizes the execution times and speedups for various domain decompositions:
 
-| Configuration                   | Simulation Time (seconds) | Speedup (relative to serial) |
-|--------------------------------|----------------------------|------------------------------|
-| Serial                         | 1346.69                    | 1.00×                        |
-| Parallel (MPI Decomposition: 1×2) | 773.87                     | 1.74×                        |
-| Parallel (MPI Decomposition: 2×2) | 442.39                     | 3.04×                        |
-| Parallel (MPI Decomposition: 1×5) | 403.66                     | 3.33×                        |
+| Configuration                     | Simulation Time (seconds) | Speedup (relative to serial) |
+| --------------------------------- | ------------------------- | ---------------------------- |
+| Serial                            | 1346.69                   | 1.00×                        |
+| Parallel (MPI Decomposition: 1×2) | 773.87                    | 1.74×                        |
+| Parallel (MPI Decomposition: 2×2) | 442.39                    | 3.04×                        |
+| Parallel (MPI Decomposition: 1×5) | 403.66                    | 3.33×                        |
 
 ---
 
 ## Results Discussion
 
 ### Solution Consistency
+
 - Both the serial and parallel solvers produce **nearly identical solution fields**, verifying correctness.
 - Contour plots from each implementation confirm spatial consistency.
 
 ### Scalability
+
 - Clear performance gains are observed in the parallel version:
   - 2 processors → **1.74× faster**
   - 4 processors → **3.04× faster**
   - 5 processors → **3.33× faster**
 
 ### MPI Decomposition Impact
+
 - Decomposing the domain as 2×2 yields **better load balancing and communication efficiency**.
 - Unbalanced splits like 1×5 still perform well but may incur higher communication overhead.
 
 ### Performance Trade-Offs
+
 - For **small grids**, MPI communication overhead can dominate.
 - For **larger domains**, parallel scaling becomes more effective and efficient.
 
@@ -86,11 +92,12 @@ The following table summarizes the execution times and speedups for various doma
 **Solution Plot:**
 
 <div style="width: 60%; margin: auto;">
-  {% include figure.liquid 
-     path="assets/img/projects/p2/advDiff.png" 
-     title="Scalar Field Distribution" 
-     caption="Contour of the scalar field" 
-     class="img-fluid rounded z-depth-1 my-3" 
+  {% include figure.liquid
+     path="assets/img/projects/p2/advDiff.png"
+     title="Scalar Field Distribution"
+     caption="Contour of the scalar field"
+     alt="Contour plot showing the scalar field distributed across the two-dimensional domain"
+     class="img-fluid rounded z-depth-1 my-3"
   %}
 </div>
 
