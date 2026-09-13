@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-publications",
           title: "Publications",
-          description: "Publications by categories in reversed chronological order.",
+          description: "Research manuscripts and conference submissions in reverse chronological order.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
@@ -32,48 +32,12 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "Below is an overview of my academic background, research experience, and technical expertise. You can download the full PDF version of my CV using the button above.",
+          description: "An overview of my academic background, research experience, and technical expertise. Use the document icon to download the PDF version.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/CV/";
           },
-        },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
-      
-        title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-      
-      description: "We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.",
-      section: "Posts",
-      handler: () => {
-        
-          window.open("https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/", "_blank");
-        
-      },
-    },{id: "post-displaying-external-posts-on-your-al-folio-blog",
-      
-        title: 'Displaying External Posts on Your al-folio Blog <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
-        
-      },
-    },{id: "books-the-godfather",
-          title: 'The Godfather',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
-            },},{id: "news-updated-github-repos",
-          title: 'Updated Github Repos!',
-          description: "",
-          section: "News",},{id: "news-started-working-as-a-cfd-support-engineer-at-forbmax-i-m-currently-contributing-to-a-kaust-funded-project-focused-on-large-scale-cfd-simulations-high-performance-computing-hpc-and-optimization-frameworks",
-          title: 'Started working as a CFD Support Engineer at Forbmax. I’m currently contributing to...',
-          description: "",
-          section: "News",},{id: "news-i-m-pleased-to-share-that-i-successfully-defended-my-master-s-thesis-with-an-a-grade",
-          title: 'I’m pleased to share that I successfully defended my Master’s thesis with an...',
-          description: "",
-          section: "News",},{id: "projects-gnn-based-flow-prediction",
+        },{id: "projects-gnn-based-flow-prediction",
           title: 'GNN-Based Flow Prediction',
           description: "Integration of GNNs with classical CFD simulations",
           section: "Projects",handler: () => {
@@ -88,6 +52,11 @@ ninja.data = [{
           description: "Two classic CFD problems implemented with finite differences for learning flow physics and numerical methods.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
+            },},{id: "projects-diffuser-augmented-micro-scale-wind-turbine-for-low-wind-speed-operation",
+          title: 'Diffuser-Augmented Micro-Scale Wind Turbine for Low-Wind-Speed Operation',
+          description: "Design, blade-resolved CFD, and experimental assessment of a micro-scale wind turbine for low-wind-speed operation",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/diffuser-augmented-wind-turbine/";
             },},{
         id: 'social-email',
         title: 'email',
